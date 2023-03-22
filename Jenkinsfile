@@ -14,18 +14,24 @@ pipeline {
         stage('test intégration') {
           steps {
             echo 'test d\'intégration'
+            bat 'mvnw -Dtest=com.example.testingweb.integration.** test'
+            echo 'end of integration test'
           }
         }
 
         stage('test fonctionnel') {
           steps {
             echo 'test fonctionnel'
+            bat './mvnw -Dtest=com.example.testingweb.functional.** test'
+            echo 'end of functional test'
           }
         }
 
         stage('smoke test') {
           steps {
             echo 'smoke test'
+            bat './mvnw -Dtest=com.example.testingweb.smoke.** test'
+            echo 'end of smoke test'
           }
         }
 
