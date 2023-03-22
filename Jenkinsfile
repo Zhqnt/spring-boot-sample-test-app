@@ -22,7 +22,7 @@ pipeline {
         stage('test fonctionnel') {
           steps {
             echo 'test fonctionnel'
-            bat './mvnw -Dtest=com.example.testingweb.functional.** test'
+            bat 'mvnw -Dtest=com.example.testingweb.functional.** test'
             echo 'end of functional test'
           }
         }
@@ -30,7 +30,7 @@ pipeline {
         stage('smoke test') {
           steps {
             echo 'smoke test'
-            bat './mvnw -Dtest=com.example.testingweb.smoke.** test'
+            bat 'mvnw -Dtest=com.example.testingweb.smoke.** test'
             echo 'end of smoke test'
           }
         }
