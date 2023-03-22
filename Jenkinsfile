@@ -4,6 +4,8 @@ pipeline {
     stage('build') {
       steps {
         echo 'build stage'
+        bat 'mvnw -DskipTests clean install'
+        echo 'end of build'
       }
     }
 
