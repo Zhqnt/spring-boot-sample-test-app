@@ -8,7 +8,7 @@ pipeline {
         echo 'end of build'
         archiveArtifacts '**/target/*.jar'
         echo 'fin archivage'
-        echo 'MARCHE LA'
+        bat 'docker build -t testapp:latest .'
       }
     }
 
@@ -46,7 +46,7 @@ pipeline {
       steps {
         input(message: 'voulez vous continuer ? ', ok: 'Lets go')
         echo 'stage deploy'
-        bat 'javaw -jar target/testing-web-complete.jar'
+        bat 'docker run -d -p 3030:9090 testapp:latest'
         echo 'end of deploy'
       }
     }
