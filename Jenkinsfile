@@ -34,6 +34,7 @@ pipeline {
             echo 'smoke test'
             bat 'mvnw -Dtest=com.example.testingweb.smoke.** test'
             echo 'end of smoke test'
+            junit '*/target/surefire-reports/TEST-.xml'
           }
         }
 
@@ -45,6 +46,7 @@ pipeline {
         echo 'stage deploy'
         bat 'java -jar target/testing-web-complete.jar'
         echo 'end of deploy'
+        input(message: 'voulez vous continuer ? ', ok: 'Lets go')
       }
     }
 
