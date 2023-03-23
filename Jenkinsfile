@@ -34,7 +34,7 @@ pipeline {
             echo 'smoke test'
             bat 'mvnw -Dtest=com.example.testingweb.smoke.** test'
             echo 'end of smoke test'
-            junit '*/target/surefire-reports/TEST-.xml'
+            junit '**/target/surefire-reports/TEST-.xml'
           }
         }
 
