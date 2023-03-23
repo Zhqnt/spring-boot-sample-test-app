@@ -2,7 +2,7 @@
 FROM openjdk:11-slim as build
 
 # Add Maintainer Info
-LABEL maintainer="Soupramanien BOUVANESVARY <soupramani@yahoo.fr>"
+LABEL maintainer="ROUFF Philippe <phi.rouff@gmail.com>"
 
 # The application's jar file
 ARG JAR_FILE=target/*.jar
