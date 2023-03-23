@@ -8,7 +8,6 @@ pipeline {
         echo 'end of build'
         archiveArtifacts '**/target/*.jar'
         echo 'fin archivage'
-        echo 'MARCHE LA'
       }
     }
 
